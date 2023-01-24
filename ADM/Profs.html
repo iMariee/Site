@@ -17,7 +17,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #f393db;
+  background-color: #ff9fe2;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -127,34 +127,57 @@ span.psw {
 </head>
 <body>
 
-<h2>Welcome to Epitech's ADM intranet</h2>
+<h2>Welcome to Epitech's ADM intranet 😎</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="./php/action_page.html" method="post">
+
+  <form class="modal-content animate" action="./php/action_page.html" method="post" onsubmit="return validateForm()">
+
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" required id="uname">
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="password" required id="passwd">
         
       <button type="submit">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
+      <script>
+            function validateForm() {
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("passwd").value;
+            if (username === "leslie" && password === "leslie") {
+            window.location.href = "./php/action_page.html";
+            return true;
+            } else if (username === "romain" && password === "romain") {
+            window.location.href = "./php/action_page.html";
+            return true;
+            } else if (username === "adrien" && password === "adrien") {
+            window.location.href = "./php/action_page.html";
+            return true;
+            } else if (username === "vincent" && password === "vincent") {
+            window.location.href = "./php/action_page.html";
+            return true;
+            } else {
+            alert("Wrong username or password. Please try again.");
+            return false;
+            }
+          }
+        </script>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
+    </div>    
   </form>
 </div>
 

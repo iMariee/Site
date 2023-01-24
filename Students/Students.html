@@ -127,14 +127,13 @@ span.psw {
 </head>
 <body>
 
-<h2>Welcome to Epitech students'intranet</h2>
+<h2>Welcome to Epitech students'intranet 🥹</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
 
   <form class="modal-content animate" action="./php/action_page.html" method="post" onsubmit="return validateForm()">
-
 
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -155,11 +154,12 @@ span.psw {
             function validateForm() {
             var username = document.getElementById("uname").value;
             var password = document.getElementById("passwd").value;
-            if (username === "abc" && password === "123") {
+            if (username === "luc" && password === "luc") {
             window.location.href = "./php/action_page.html";
             return true;
             } else {
             alert("Wrong username or password. Please try again.");
+            return false;
             }
           }
         </script>
