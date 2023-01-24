@@ -142,7 +142,7 @@ span.psw {
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="admin" required id="uname">
+      <input type="text" placeholder="Enter Username" required id="uname">
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="password" required id="passwd">
@@ -151,25 +151,24 @@ span.psw {
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
+      <script>
+            function validateForm() {
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("passwd").value;
+            if (username === "abc" && password === "123") {
+            window.location.href = "./php/action_page.html";
+            return true;
+            } else {
+            alert("Wrong username or password. Please try again.");
+            }
+          }
+        </script>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-    <script>
-    function validateForm() {
-      var username = document.forms["loginForm"]["username"].value;
-      var password = document.forms["loginForm"]["password"].value;
-      if (username == "abc" && password == "123") {
-        window.location.href = "./php/action_page.html";
-        return true;
-      } else {
-        alert("Invalid username or password");
-        return false;
-      }
-    }
-    </script>    
+    </div>    
   </form>
 </div>
 
