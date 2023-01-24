@@ -152,24 +152,24 @@ span.psw {
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
     </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
     <script>
     function validateForm() {
       var username = document.forms["loginForm"]["username"].value;
       var password = document.forms["loginForm"]["password"].value;
-      if (username == "admin" && password == "password") {
+      if (username == "abc" && password == "123") {
         window.location.href = "./php/action_page.html";
-        return false;
+        return true;
       } else {
         alert("Invalid username or password");
         return false;
       }
     }
     </script>    
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
   </form>
 </div>
 
